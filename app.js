@@ -6,11 +6,15 @@ async function getip(){
     const  response = await fetch(api_url);
     const data = await response.json();
         var i = 0;
-        var quest = data[i]['question'];
+        let quest = data[i]['question'];
     console.log(quest);
 let element = document.getElementById('question');
 element.innerHTML = quest;
 
+    let answors = data[i]["answors"];
+    for (var  j in answors){
+        console.log(answors[j]);
+    }
 }
 
 document.getElementById('start-btn').addEventListener("click",()=>{

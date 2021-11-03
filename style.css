@@ -26,6 +26,18 @@ nav{
 nav svg{
     width: 50px;
 }
+svg #logo{
+    animation: logoAnimation 2s linear infinite;
+
+}
+@keyframes logoAnimation {
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+    transform: rotate(360deg);
+    }
+}
 .nav-links{
     text-align: right;
     width: 30%;
@@ -53,7 +65,7 @@ nav svg{
     content: '';
     width: 0%;
     height: 2px;
-    background: #f44336;
+    background:  #020267;
     display: block;
     margin: auto;
     transition: 0.5s;

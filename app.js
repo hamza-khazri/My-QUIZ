@@ -12,10 +12,10 @@ async function getip(){
         let element = document.getElementById('question');
         element.innerHTML = quest;
     let answers = data[i]["answers"];
-        let answerDiv = document.querySelector(".answers");
-    answers.map(answers =>{
-        retrun (<div>{answers}</div>);
-    })
-    
+    //     let answerDiv = document.querySelector(".answers");
+    // answers.map(answers =>{
+    //     retrun (<div>{answers}</div>);
+    // })
+}
 
 getip();

@@ -5,6 +5,7 @@
 }
 body{
     height: 100vh;
+    overflow-x:hidden;
 }
 header{
     margin: 0;
@@ -13,7 +14,7 @@ header{
     background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(images/background.jpg);
     background-size:cover;
     background-position:top;
-  overflow-y:inherit;
+    overflow-y:inherit;
 }
 
 nav{
@@ -47,6 +48,13 @@ svg {
     text-align: right;
     width: 30%;
 }
+nav .fa{
+    display: block;
+    margin: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    margin-right: 30px;
+        }
 .nav-links ul{
     display: flex;
     flex: 1;
@@ -143,4 +151,51 @@ label{
 }
 .answor-btn{
     
+}
+.times{
+    color:white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media  (max-width:700px) {
+    nav{
+        padding : 1% 1%;
+    }
+    .nav-links ul li{
+        display: block;
+       
+    }
+    .nav-links{
+        position:absolute;
+        background: rgb(15, 15, 77);
+        color :#fff;
+        height: 100%;
+        width: 200px;
+        top:0;
+        right:-200px;
+        text-align: left;
+        z-index: 2;
+    }
+    .nav-links ul li::after{
+ 
+        background:  white;
+    }
+    .nav-links ul{
+        padding: 30px;
+        display: inline;
+    }
+    .nav-links ul li a{
+        color: #fff;
+    }
 }

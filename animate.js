@@ -1,7 +1,7 @@
 document.getElementById('start-btn').addEventListener("click",()=>{
     document.getElementById('quiz').style.display = "inline";
 });
-
+//--------------------header animation-----------------------------
 const typed = document.getElementById("title-text");
 const cursor = document.querySelector(".cursor");
 
@@ -41,3 +41,16 @@ function erase(){
 document.addEventListener("DOMContentLoaded",()=>{
     setTimeout(type,newTextDelay + 250);
 });
+
+
+
+
+//---------------show and hide --nav-----------------------
+function showmenu(){
+    var navlinks = document.querySelector(".nav-links");
+    navlinks.style.right ="0";
+}
+function hidemenu(){
+    var navlinks = document.querySelector(".nav-links");
+   navlinks.style.right ="-200px";
+}

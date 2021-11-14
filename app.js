@@ -2,7 +2,7 @@ const api_url = "https://quizapi.io/api/v1/questions?apiKey=YSH1KNbEMiQ1DIKRIQ4p
 console.log("appp.js is working");
 
 
-function answersManipulation(array) {
+function answersManipulation(array,data,i) {
 
     var counter = 0;
     var name ='';
@@ -17,31 +17,37 @@ function answersManipulation(array) {
         if (array[j] != null){
             div.style.display="block";
             l.textContent = array[j];
-            box.setAttribute('value',j);
+            let prop = j + "_correct";
+            console.log(i);
+            box.setAttribute('value',data[i]["correct_answers"][prop]);
         }
     } 
 }
-    
+
  function round(i,data,score){
  
     if(i >= 10){
         document.getElementById('quiz').style.display = "none";
-        console.table(score);
+        var final = 0;
+        for (var one in score ){
+            if (score[one]== 'true'){
+                final++;
+            }
+        }
+        let scoreDiv = document.getElementById('score');
+        scoreDiv.innerHTML = "your score is "+ final + "/10";
         return;
     }
     let quest = data[i]['question'];
-   
     let element = document.getElementById('question');
     element.innerHTML = quest;
     let answers = data[i]["answers"];
-    answersManipulation(answers);
+    answersManipulation(answers,data,i);
     //-----------checked----verif------------------------
-   
-    let correctAns = data[i]['correct_answer'];
     var radios = document.forms["f"].elements["ans"];
     for(radio in radios) {
         radios[radio].onclick = function() {
-        score[i]=[this.value,correctAns];
+        score[i]=[this.value];
         }
     }
     
@@ -50,7 +56,7 @@ function answersManipulation(array) {
 async function getip(){
     const  response = await fetch(api_url);
     const data = await response.json();
-    console.log("data is working");
+    console.log(data,"data is working");
     var i = 0;
     let score = [];
         document.getElementById('start-btn').addEventListener("click",()=>{

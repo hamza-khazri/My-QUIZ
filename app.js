@@ -3,8 +3,7 @@ console.log("appp.js is working");
 
 
 function answersManipulation(array) {
-    // const div = docuement.querySelector('.answers');
-    console.log(array,'answers are working');
+
     var counter = 0;
     var name ='';
     var div = '';
@@ -12,7 +11,6 @@ function answersManipulation(array) {
         counter++;
         name = 'l'+ counter;
         divState = 'd'+ counter;
-        console.log(divState)
         var l = document.getElementById(name);
         var box = document.getElementById(counter);
         var div = document.getElementById(divState);
@@ -21,35 +19,49 @@ function answersManipulation(array) {
             l.textContent = array[j];
             box.setAttribute('value',j);
         }
-    }
-    console.log("end");
+    } 
 }
-
-function round(i,data){
+    
+ function round(i,data,score){
+ 
+    if(i >= 10){
+        document.getElementById('quiz').style.display = "none";
+        console.table(score);
+        return;
+    }
     let quest = data[i]['question'];
-    console.log(quest);
+   
     let element = document.getElementById('question');
     element.innerHTML = quest;
     let answers = data[i]["answers"];
     answersManipulation(answers);
+    //-----------checked----verif------------------------
+   
+    let correctAns = data[i]['correct_answer'];
+    var radios = document.forms["f"].elements["ans"];
+    for(radio in radios) {
+        radios[radio].onclick = function() {
+        score[i]=[this.value,correctAns];
+        }
+    }
+    
 }
 
 async function getip(){
     const  response = await fetch(api_url);
     const data = await response.json();
-    console.log(data,"data is working");
+    console.log("data is working");
     var i = 0;
-    document.getElementById('start-btn').addEventListener("click",()=>{
-        round(i,data);
-        i++;
-    });
-    document.querySelector('.answer-btn').addEventListener("click",()=>{
-        round(i,data);
-        i++;
-    });
+    let score = [];
+        document.getElementById('start-btn').addEventListener("click",()=>{
+            round(i,data,score);
+            i++;
+        });
+        document.querySelector('.answer-btn').addEventListener("click",()=>{
+            round(i,data,score);
+            i++;
+        });
 }
-
-
 
 
 getip();

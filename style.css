@@ -49,11 +49,8 @@ svg {
     width: 30%;
 }
 nav .fa{
-    display: block;
-    margin: 10px;
-    font-size: 20px;
-    cursor: pointer;
-    margin-right: 30px;
+    display: none;
+
         }
 .nav-links ul{
     display: flex;
@@ -143,13 +140,25 @@ h1{
     display: none;
 
 }
+.answers div{
+    display: none;
+    overflow: hidden;
+}
 label{
-    font-size: 28px;
+    font-size: 12px;
 }
 #question{
     text-align: center;
 }
-.answor-btn{
+.answer-btn{
+    display:block;
+    text-align: center;
+    padding: 20px;
+    border: 1px solid rgba(2, 2, 103, 0.38);
+    border-radius:5px ;
+    color: #020267;
+    font-size: 14px;
+    font-family: monospace;
     
 }
 .times{
@@ -163,18 +172,17 @@ label{
 
 
 
-
-
-
-
-
 @media  (max-width:700px) {
     nav{
         padding : 1% 1%;
-    }
-    .nav-links ul li{
-        display: block;
        
+    }
+    nav .fa{
+        display: inline;
+        margin: 10px;
+        font-size: 20px;
+        cursor: pointer;
+        margin-right: 30px;
     }
     .nav-links{
         position:absolute;
@@ -186,15 +194,19 @@ label{
         right:-200px;
         text-align: left;
         z-index: 2;
-    }
-    .nav-links ul li::after{
- 
-        background:  white;
+    
     }
     .nav-links ul{
+        display: block;
         padding: 30px;
-        display: inline;
     }
+    .nav-links ul li{
+        display: block;
+    }
+    .nav-links ul li::after{
+        background:  white;
+    }
+
     .nav-links ul li a{
         color: #fff;
     }

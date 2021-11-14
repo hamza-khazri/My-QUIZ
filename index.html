@@ -7,7 +7,7 @@
     <title> MY QUIZ </title>
     <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="style.css">
-    <script src="app.js"></script>
+    
 </head>
 <body>
     <header>
@@ -33,18 +33,37 @@
         <div id="quiz">
             <label>question :</label><p id="question"></p>
             <div class="answers">
-            <button class="answor-btn">send answor</button>
+                <div id="d1">
+                    <input type="radio" id="1" name="ans" value="">
+                    <label id ="l1" for="1"></label><br>
+                </div>
+                <div id="d2">
+                    <input type="radio"  id="2"  name="ans" value="">
+                    <label id ="l2" for="2"></label><br>
+                </div>
+                <div id="d3">
+                     <input type="radio"  id="3"  name="ans" value="">
+                     <label id ="l3" for="3"> </label><br>
+                </div>
+                <div id="d4">
+                     <input type="radio"  id="4"  name="ans" value="">
+                     <label id ="l4" for="4"> </label><br>
+                </div>
+                <div id="d5">
+                    <input type="radio"  id="5"  name="ans" value="">
+                    <label id ="l5" for="5"> </label><br>
+                </div>
+                <div id="d6">
+                    <input type="radio"  id="6"  name="ans" value="">
+                    <label id ="l6" for="6"> </label><br>
+                </div>
+            <button class="answer-btn">send answor</button>
             </div>
         </div>
         
 
     </section>
 </body>
-
 <script src="animate.js"></script>
-<script src="https://unpkg.com/react@16/umd/react.development.js"></script>
-
-<script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
-
-<script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+<script src="app.js"></script>
 </html>

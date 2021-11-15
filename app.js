@@ -16,6 +16,7 @@ function answersManipulation(array,data,i) {
         var div = document.getElementById(divState);
         if (array[j] != null){
             div.style.display="block";
+            box.style.display="inline";
             l.textContent = array[j];
             let prop = j + "_correct";
             box.setAttribute('value',data[i]["correct_answers"][prop]);
@@ -34,12 +35,12 @@ function answersManipulation(array,data,i) {
             }
         }
         let scoreDiv = document.getElementById('score');
-        scoreDiv.innerHTML = "your score is "+ final + "/10";
+        scoreDiv.textContent = "your score is "+ final + "/10";
         return;
     }
     let quest = data[i]['question'];
     let element = document.getElementById('question');
-    element.innerHTML = quest;
+    element.textContent = quest;
     let answers = data[i]["answers"];
     answersManipulation(answers,data,i);
     //-----------checked----verif------------------------
@@ -54,10 +55,13 @@ function answersManipulation(array,data,i) {
 
 
 function reset() {
-    var elems = document.querySelectorAll(".ans-label");
-    var index = 0, length = elems.length;
+    var radios = document.querySelectorAll(".radios");
+    var labels = document.querySelectorAll(".ans-label");
+    var index = 0, length = labels.length;
     for ( ; index < length; index++) {
-        elems[index].textContent = "";
+        labels[index].textContent = "";
+        radios[index].style.display="none";
+        radios[index].checked =false;
     }
 }
 

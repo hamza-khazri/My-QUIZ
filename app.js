@@ -18,7 +18,6 @@ function answersManipulation(array,data,i) {
             div.style.display="block";
             l.textContent = array[j];
             let prop = j + "_correct";
-            console.log(i);
             box.setAttribute('value',data[i]["correct_answers"][prop]);
         }
     } 
@@ -53,17 +52,29 @@ function answersManipulation(array,data,i) {
     
 }
 
+
+function reset() {
+    var elems = document.querySelectorAll(".ans-label");
+    var index = 0, length = elems.length;
+    for ( ; index < length; index++) {
+        elems[index].textContent = "";
+    }
+}
+
 async function getip(){
     const  response = await fetch(api_url);
     const data = await response.json();
     console.log(data,"data is working");
     var i = 0;
     let score = [];
+    let ansLabels = document.querySelectorAll('.ans-label');
         document.getElementById('start-btn').addEventListener("click",()=>{
+            reset();
             round(i,data,score);
             i++;
         });
         document.querySelector('.answer-btn').addEventListener("click",()=>{
+            reset();
             round(i,data,score);
             i++;
         });

@@ -5,7 +5,7 @@ document.getElementById('start-btn').addEventListener("click",()=>{
 const typed = document.getElementById("title-text");
 const cursor = document.querySelector(".cursor");
 
-const textArray = ["learn","have fun","grow your knowlage"];
+const textArray = ["learn","have fun","grow your knowlege"];
 const typingDelay = 200;
 const erasingDelay = 100;
 const newTextDelay = 2000;

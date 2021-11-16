@@ -47,6 +47,7 @@ svg {
 .nav-links{
     text-align: right;
     width: 30%;
+    transition: ease .5s;
 }
 nav .fa{
     display: none;
@@ -145,7 +146,7 @@ h1{
     overflow: hidden;
 }
 label{
-    font-size: 12px;
+    font-size: 14px;
 }
 #question{
     text-align: center;
@@ -171,7 +172,14 @@ label{
 
 
 
-
+footer{
+    font-size: 12px;
+    background-color: #020267;
+    padding: 10px 0px;
+    color: #fff;
+    text-align: center;
+    
+}
 @media  (max-width:700px) {
     nav{
         padding : 1% 1%;

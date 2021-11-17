@@ -166,9 +166,14 @@ label{
     color:white;
 }
 
-
-
-
+#score{
+    margin: auto;
+    border: 1px solid #020267;
+    border-radius: 5px;
+    width:fit-content;
+    padding: 20px 50px;
+    display: none;
+}
 
 
 

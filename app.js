@@ -35,6 +35,15 @@ function answersManipulation(array,data,i) {
             }
         }
         let scoreDiv = document.getElementById('score');
+        scoreDiv.style.display ="block";
+        if (final <4){
+            scoreDiv.style.background =" red";
+        }else if (final >7){
+            scoreDiv.style.background =" green";
+        }else{
+            scoreDiv.style.background ="orange";
+
+        }
         scoreDiv.textContent = "your score is "+ final + "/10";
         return;
     }

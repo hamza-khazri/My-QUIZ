@@ -10,7 +10,7 @@
 section{
     display: flex;
 }
-#illust1{
+#illust1,#illust3{
     width: 50%; 
     height:  auto;
     background: linear-gradient(to right,#ff7f5086, #fff);
@@ -31,6 +31,32 @@ section{
 .text p{
     letter-spacing: 1px;
     color: rgb(88, 88, 88);
+}
+
+
+
+@media  (max-width:700px){
+    section{
+    display: flex;
+    flex-flow: column;
+}
+    #illust1,#illust3{
+    width: 100%; 
+    height:  auto;
+    order: 1;
+    background: #fff;
+}
+#illust2,#illust4{
+    width: 100%; 
+    height:  auto;
+    order: 1;
+    background: #fff;
+}
+.text{
+    width: 100%;
+    order: 2;
+    margin: 5px;
+}
 }
     </style>
 </head>
@@ -76,7 +102,7 @@ and challenge yourself to be the best.
     <img id="illust2" src="images/illust2.svg" alt="">
 </section>
 <section>
-    <img id="illust1" src="images/illust1.svg" alt="">
+    <img id="illust3" src="images/illust3.svg" alt="">
     <div class="text">
         <h3>
             Fields

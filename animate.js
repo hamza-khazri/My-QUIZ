@@ -1,6 +1,4 @@
-document.getElementById('start-btn').addEventListener("click",()=>{
-    document.getElementById('quiz').style.display = "inline";
-});
+
 //--------------------header animation-----------------------------
 const typed = document.getElementById("title-text");
 const cursor = document.querySelector(".cursor");
@@ -43,8 +41,10 @@ document.addEventListener("DOMContentLoaded",()=>{
 });
 
 
-
-
+//----------------------------------------------------------
+document.getElementById('start-btn').addEventListener("click",()=>{
+    document.getElementById('quiz').style.display = "inline";
+});
 //---------------show and hide --nav-----------------------
 function showmenu(){
     var navlinks = document.querySelector(".nav-links");

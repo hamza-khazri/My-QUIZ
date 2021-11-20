@@ -27,9 +27,8 @@ nav{
 nav svg{
     width: 50px;
 }
-svg {
+nav svg {
     overflow: hidden;
-
     transform: translatey(0px);
     animation: float 6s ease-in-out infinite;
 }
@@ -174,19 +173,59 @@ label{
     padding: 20px 50px;
     display: none;
 }
+.footer{
+    display: flex;
+    justify-content: space-around;
+    background-color: #23272A;
+    color: #fff;
+    padding-top: 40px;
+}
+.footer .contact-form input,textarea{
+    border: none;
+    padding: 10px;
+    width: 130px;
+    border-radius: 5px;
+    margin-bottom: 10px ;
+}
+.footer .contact-form h3{
+    margin-bottom: 10px;
+}
+.footer .contact-form button{
+    background-color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius:5px ;
+    color: #020267;
+    font-weight: bold;
+}
 
+.footer .site-map ul{
+ list-style: none;
+ margin-top: 10px;
+ margin-left: 10px;
+}
+.footer .site-map ul li {
+    margin : 5px;
+}
+.footer  a:visited{  color: rgb(255, 255, 255) }
 
-
-footer{
-   
-    bottom: 0;
+.footer .contact-info .footer-logo{
+    width: 50px;
+    margin: 20px 0px;
+}
+.footer .social{
+    display: block;
+    color: #fff;
+}
+.copyright{
     font-size: 12px;
-    background-color: #020267;
+    background-color: #23272A;
     padding: 10px 0px;
     color: #fff;
     text-align: center;
     
 }
+
 @media  (max-width:700px) {
     nav{
         padding : 1% 1%;
@@ -225,4 +264,18 @@ footer{
     .nav-links ul li a{
         color: #fff;
     }
+
+
+
+
+
+    .footer{
+        display: flex;
+        flex-direction: column;
+        padding: 50px 40px;
+    }
+.footer .contact-form,.site-map,.contact-info {
+
+ padding-bottom: 20px;
+}
 }

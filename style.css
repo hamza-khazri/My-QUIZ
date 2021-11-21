@@ -26,6 +26,7 @@ nav{
 }
 nav svg{
     width: 50px;
+    margin-left: 15px;
 }
 nav svg {
     overflow: hidden;
@@ -212,6 +213,10 @@ label{
 .footer .contact-info .footer-logo{
     width: 50px;
     margin: 20px 0px;
+    fill: white;
+}
+.footer .contact-info .footer-logo  .cls{
+    fill: white;
 }
 .footer .social{
     display: block;

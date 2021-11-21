@@ -117,6 +117,7 @@ h1{
 
 .game{
     width: 100%;
+    min-height: 300px;
 }
 #start-btn{
     display:block;

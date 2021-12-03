@@ -1,6 +1,12 @@
 const api_url = "https://quizapi.io/api/v1/questions?apiKey=YSH1KNbEMiQ1DIKRIQ4pkYIx18oVhLQuEIbAyH8V&category=code&difficulty=Easy&limit=10";
 console.log("appp.js is working");
-
+ 
+document.getElementById('start-btn').addEventListener("click",()=>{
+    delete i;
+    document.getElementById('score').style.display ="none"; 
+    i = 0;
+    getip(i);
+});
 
 function answersManipulation(array,data,i) {
 
@@ -25,8 +31,9 @@ function answersManipulation(array,data,i) {
 }
 
  function round(i,data,score){
- 
+    console.log(i);
     if(i >= 10){
+        delete i;
         document.getElementById('quiz').style.display = "none";
         var final = 0;
         for (var one in score ){
@@ -46,7 +53,7 @@ function answersManipulation(array,data,i) {
         }
         scoreDiv.textContent = "your score is "+ final + "/10";
         return;
-    }
+    }else{
     let quest = data[i]['question'];
     let element = document.getElementById('question');
     element.textContent = quest;
@@ -59,6 +66,7 @@ function answersManipulation(array,data,i) {
         score[i]=[this.value];
         }
     }
+}
     
 }
 
@@ -74,24 +82,19 @@ function reset() {
     }
 }
 
-async function getip(){
+async function getip(i){
     const  response = await fetch(api_url);
     const data = await response.json();
     console.log(data,"data is working");
-    var i = 0;
-    let score = [];
-    let ansLabels = document.querySelectorAll('.ans-label');
-        document.getElementById('start-btn').addEventListener("click",()=>{
-            reset();
-            round(i,data,score);
-            i++;
-        });
+    var score = [];
+    round(i,data,score);
+    i++;
         document.querySelector('.answer-btn').addEventListener("click",()=>{
             reset();
             round(i,data,score);
-            i++;
+            if (i<=9){i++;}else{i=0;};
         });
+        
 }
 
 
-getip();

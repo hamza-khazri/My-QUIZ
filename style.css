@@ -145,12 +145,32 @@ h1{
 .answers div{
     display: none;
     overflow: hidden;
+    transition: 2s;
 }
 label{
     font-size: 14px;
 }
 #question{
     text-align: center;
+}
+.answers form{
+    width: fit-content;
+    margin: auto;
+    
+}
+.answers form div{
+    margin: auto;
+    width: 100%;
+    border: 1px solid white;
+    border-radius: 5px;
+    padding: 5px 0;
+    background-color: white;
+    margin: 5px;
+    transition: ease-in-out 0.5s;
+}
+.answers form div:hover{
+    background-color:rgba(182, 183, 192, 0.24) ;
+    border: 1px solid #020267;
 }
 .answer-btn{
     display:block;
@@ -233,6 +253,16 @@ label{
 }
 
 @media  (max-width:700px) {
+    header{
+        height: 50vh;
+        display: flex;
+        flex-direction: column;
+    }
+    header h1{
+        margin: auto 20px;
+        justify-self:center;
+    }
+  
     nav{
         padding : 1% 1%;
        
@@ -271,8 +301,16 @@ label{
         color: #fff;
     }
 
-
-
+    .game{
+        width: 80%;
+        margin: auto;
+    }
+    .answers form{
+        width: fit-content;
+        margin: 0px;
+        text-align: left;
+        
+    }
 
 
     .footer{

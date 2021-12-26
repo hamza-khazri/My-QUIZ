@@ -2,10 +2,8 @@ const api_url = "https://quizapi.io/api/v1/questions?apiKey=YSH1KNbEMiQ1DIKRIQ4p
 console.log("appp.js is working");
  
 document.getElementById('start-btn').addEventListener("click",()=>{
-    delete i;
     document.getElementById('score').style.display ="none"; 
-    i = 0;
-    getip(i);
+    getip();
 });
 
 function answersManipulation(array,data,i) {
@@ -13,7 +11,7 @@ function answersManipulation(array,data,i) {
     var counter = 0;
     var name ='';
     var div = '';
-    for (j in array){
+    for (let j in array){
         counter++;
         name = 'l'+ counter;
         divState = 'd'+ counter;
@@ -75,20 +73,20 @@ function reset() {
     var radios = document.querySelectorAll(".radios");
     var labels = document.querySelectorAll(".ans-label");
     var index = 0, length = labels.length;
-    for ( ; index < length; index++) {
+    for (  ; index < length; index++) {
         labels[index].textContent = "";
         radios[index].style.display="none";
         radios[index].checked =false;
     }
 }
 
-async function getip(i){
+async function getip(){
     const  response = await fetch(api_url);
     const data = await response.json();
     console.log(data,"data is working");
     var score = [];
+    let i = 0;
     round(i,data,score);
-    i++;
         document.querySelector('.answer-btn').addEventListener("click",()=>{
             reset();
             round(i,data,score);

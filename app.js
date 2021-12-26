@@ -29,7 +29,7 @@ function answersManipulation(array,data,i) {
 }
 
  function round(i,data,score){
-    console.log(i);
+    console.log(i);   
     if(i >= 10){
         delete i;
         document.getElementById('quiz').style.display = "none";
@@ -40,7 +40,7 @@ function answersManipulation(array,data,i) {
             }
         }
         let scoreDiv = document.getElementById('score');
-        scoreDiv.style.display ="block";
+        scoreDiv.style.display ="block"; 
         if (final <4){
             scoreDiv.style.background =" red";
         }else if (final >7){
